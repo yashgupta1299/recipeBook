@@ -5,8 +5,6 @@ import { map, Subscription } from 'rxjs';
 import { Recipe } from '../recipe.model';
 import { Store } from '@ngrx/store';
 import * as fromApp from '../../store/app.reducer';
-import * as RecipesActions from '../../recipes/store/recipe.actions';
-import { RecipeStartComponent } from '../recipe-start/recipe-start.component';
 @Component({
   selector: 'app-recipe-list',
   templateUrl: './recipe-list.component.html',
@@ -29,7 +27,6 @@ export class RecipeListComponent implements OnInit, OnDestroy {
       .subscribe((recipes: Recipe[]) => {
         this.recipes = recipes;
       });
-    // this.recipes = this.recipeService.getRecipes();
   }
 
   onNewRecipe() {
